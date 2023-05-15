@@ -1,0 +1,56 @@
+{% extends "base1.html" %}
+{% load static %}
+{% block page_content %}
+
+
+  <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" >
+      <div class="container">
+        <h2>Our Teachers</h2>
+        <p> Our team of dedicated educators are committed to providing the highest quality education and support to our students. With years of experience and a passion for teaching, our teachers are equipped to guide and inspire our students to reach their full potential. We strive to create a positive and engaging learning environment where students feel valued and encouraged to explore their interests and talents. </p>
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+<section>
+  <div class="container">
+  
+
+<div class="row">
+     {% for teacher in teachers %}
+    <div class="col-md-6 col-sm-6 col-lg-4 mb-3">
+        <div class="card border-0">
+            <div class="member">
+              <img src="{{ teacher.image.url }}" class="img-fluid img-thumbnail" alt="">
+              <div class="member-content">
+                <h4>{{ teacher.name }}</h4>
+                <span><i><strong>{{ teacher.position }}</strong></i></span>
+                <p>{{ teacher.description|safe|striptags|truncatechars:100 }}</p>
+                <a href="{% url 'teacher_detail' teacher.pk %}">
+                    Read More
+                </a>
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+    
+    {% endfor %}
+</div>
+
+</div>
+
+</section>    
+
+
+
+
+
+
+
+
+{% endblock %}
