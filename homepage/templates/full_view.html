@@ -1,0 +1,43 @@
+{% extends "base1.html" %}
+{% load static %}
+
+{% block page_content %}
+
+
+<!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs">
+      <div class="container">
+        <h2>Our Teachers</h2>
+        <p> Our team of dedicated educators are committed to providing the highest quality education and support to our students. With years of experience and a passion for teaching, our teachers are equipped to guide and inspire our students to reach their full potential. We strive to create a positive and engaging learning environment where students feel valued and encouraged to explore their interests and talents. </p>
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+<!-- ======= Cource Details Section ======= -->
+    <section id="course-details" class="course-details">
+      <div class="container" data-aos="">
+
+        <div class="row">
+          <div class="col-lg-8">
+            <img src="{{ board.image.url }}" class="img-fluid" alt="">
+            <h3>Board Member Profile</h3>
+            <p> {{ board.description }}</p>
+          </div>
+          <div class="col-lg-4">
+
+            <div class="course-info d-flex justify-content-between align-items-center">
+              <h5>Name</h5>
+              <p><a href="#">{{ member.name }}</a></p>
+            </div>
+
+            <div class="course-info d-flex justify-content-between align-items-center">
+              <h5>Subjects</h5>
+              <p>{{ member.position }}</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Cource Details Section -->
+
+{% endblock %}
